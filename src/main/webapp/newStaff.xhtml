@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>New staff</title>
+    </h:head>
+
+    <h:body>
+        <h:form> 
+            <p:panel id="panel"  header="New staff">
+                <h:panelGrid columns="2" cellpadding="4">
+                    <h:outputText value="Name: *" />
+                    <p:inputText value="#{staff.name}" />
+
+                    <h:outputText value="Title:" />
+                    <p:selectOneMenu id="title" value="#{staff.title}">
+			            <f:selectItem itemLabel="Doctor" itemValue="Doctor" />
+			             <f:selectItem itemLabel="Nurse" itemValue="Nurse" />
+        			</p:selectOneMenu>
+                    
+                    <h:outputText value="Speciality:" />
+                    <p:selectOneMenu id="speciality" value="#{staff.speciality}">
+			            <f:selectItem itemLabel="Cardiology" itemValue="Cardiology" />
+			            <f:selectItem itemLabel="Dermatology" itemValue="Dermatology" />
+			            <f:selectItem itemLabel="Gastroenterology" itemValue="Gastroenterology" />
+			            <f:selectItem itemLabel="General" itemValue="General" />
+        			</p:selectOneMenu>
+        			
+                    <h:outputText value="Telephone: *" />
+                    <p:inputText value="#{staff.telephone}"/>
+                    
+                    <h:outputText value="Hospital: " />
+                    <p:selectOneMenu id="city" value="#{staff.hospital}">
+            			<f:selectItems value="#{staff.hospitalsName}" />
+					</p:selectOneMenu>
+					
+					
+					<h:outputText value="Access account" />
+					<h:selectBooleanCheckbox id="checkboxId" value="#{staff.checked}" >
+        				<p:ajax event="change" update="panelId" />
+   				 	</h:selectBooleanCheckbox>
+					
+					<h />
+    				<h:panelGrid id="panelId" columns="2" cellpadding="2" >
+				        <h:outputText rendered="#{staff.checked}" value="User:" />
+				        <p:inputText rendered="#{staff.checked}"/>
+				        <h:outputText rendered="#{staff.checked}" value="Password:" />
+				        <p:inputText rendered="#{staff.checked}"/>
+    				</h:panelGrid>
+    				
+					<p:button outcome="staff" value="back"/>
+                    <p:commandButton value="Submit" update="panel" icon="ui-icon-check" action="#{staff.addEmployeetoDB()}" />
+					
+					<h/>
+					<h:outputText value="#{staff.text}" />
+                </h:panelGrid>
+            </p:panel>
+            
+        </h:form>
+    </h:body>
+</html>

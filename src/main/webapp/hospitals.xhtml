@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Hospitals</title>
+    </h:head>
+
+    <h:body>
+    	<p:dataTable var="hospital" value="#{hospitals.hospitals}">
+	    	<p:column headerText="Id">
+   	    		<h:outputText value="#{hospital.idhospitals}" />
+	   	 	</p:column>
+ 
+	    	<p:column headerText="Name">
+    	   		<h:outputText value="#{hospital.name}" />
+    		</p:column>
+ 
+	  	  	<p:column headerText="Address">
+    	    	<h:outputText value="#{hospital.address}" />
+    		</p:column>
+ 
+ 	   		<p:column headerText="Telephone">
+    	    	<h:outputText value="#{hospital.telephone}" />
+    		</p:column>
+    
+    		<p:column headerText="Info">
+        		<h:outputText value="#{hospital.info}" />
+    		</p:column>
+		</p:dataTable>
+		
+		<h:panelGrid columns="2" cellpadding="4">
+			<p:button outcome="menu" value="back"/>
+			
+			<p:button outcome="newHospital" value="add"/>
+		</h:panelGrid>	
+    </h:body>
+</html>

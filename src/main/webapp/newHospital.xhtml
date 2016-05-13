@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>New hospital</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <p:panel id="panel"  header="New hospital">
+                <h:panelGrid columns="2" cellpadding="4">
+                    <h:outputText value="Name: *" />
+                    <p:inputText value="#{hospitals.name}" />
+
+                    <h:outputText value="Address: *" />
+                    <p:inputText value="#{hospitals.address}" />
+                    
+                    <h:outputText value="Telephone: *" />
+                    <p:inputText value="#{hospitals.telephone}"/>
+                    
+                    <h:outputText value="Info: " />
+                    <p:inputText value="#{hospitals.info}" />
+                    
+                    
+                    <h:outputText value="Access account" />
+					<h:selectBooleanCheckbox id="checkboxId" value="#{hospitals.checked}" >
+        				<p:ajax event="change" update="panelId" />
+   				 	</h:selectBooleanCheckbox>
+					
+					<h />
+    				<h:panelGrid id="panelId" columns="2" cellpadding="2" >
+				        <h:outputText rendered="#{hospitals.checked}" value="User:" />
+				        <p:inputText rendered="#{hospitals.checked}"/>
+				        <h:outputText rendered="#{hospitals.checked}" value="Password:" />
+				        <p:inputText rendered="#{hospitals.checked}"/>
+    				</h:panelGrid>
+					
+					
+					<p:button outcome="hospitals" value="back"/>
+                    <p:commandButton value="Submit" update="panel" icon="ui-icon-check" action="#{hospitals.addHospitaltoDB()}" />
+                    
+                    <h/>
+					<h:outputText value="#{hospitals.text}" />
+                </h:panelGrid>
+            </p:panel>
+            
+        </h:form>
+    </h:body>
+</html>
