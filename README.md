@@ -1,5 +1,5 @@
 # Basic hospital staff web appplication
-This is a personal project using JavaServer Faces (JSF) and MySQL. The goal of the project is to create a basic web appplication using [PrimeFaces](www.primefaces.org)
+This is a personal project using JavaServer Faces (JSF) and MySQL. The goal of the project is to create a basic web appplication for storing hospitals' staff information using [PrimeFaces](www.primefaces.org)
 
 ## Requirements
 - [Jetty](www.eclipse.org/jetty)
