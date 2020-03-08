@@ -1,14 +1,14 @@
-# hospitalMySQL
+# Basic hospital staff web appplication
+This is a personal project using JavaServer Faces (JSF) and MySQL. The goal of the project is to create a basic web appplication using [PrimeFaces](www.primefaces.org)
 
-## Basic hospital staff web appplication
-### Tools:
-- MySQL
-- JSF
-- Jetty
+## Requirements
+- [Jetty](www.eclipse.org/jetty)
+- [JSF](www.javaserverfaces.org)
+- [MySQL](www.mysql.com)
 
 ## Getting the appplication running
 
-1. Install Jetty and JSF in order to get the server running. PrimeFaces used in this project (www.primefaces.org)
+1. Install Jetty and JSF in order to get the server running.
 
 2. Clone the project and check if runs properly
 
