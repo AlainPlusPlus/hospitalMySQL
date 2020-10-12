@@ -3,7 +3,7 @@ This is a personal project using JavaServer Faces (JSF) and MySQL. The goal of t
 
 ## Requirements
 - [Jetty](https://www.eclipse.org/jetty)
-- [JSF](https://www.javaserverfaces.org)
+- [JSF](www.javaserverfaces.org)
 - [MySQL](https://www.mysql.com)
 
 ## Getting the appplication running
